@@ -15,7 +15,7 @@ import {
 } from "@ionic/react";
 import { personCircle } from "ionicons/icons";
 import { useParams } from "react-router";
-import "./ViewMessage.css";
+import "./ViewRecipe.css";
 
 function ViewMessage() {
   const [message, setMessage] = useState<Recipe>();
@@ -43,9 +43,9 @@ function ViewMessage() {
               <IonIcon icon={personCircle} color="primary"></IonIcon>
               <IonLabel className="ion-text-wrap">
                 <h2>
-                  {message.fromName}
+                  {/* {message.fromName} */}
                   <span className="date">
-                    <IonNote>{message.date}</IonNote>
+                    {/* <IonNote>{message.date}</IonNote> */}
                   </span>
                 </h2>
                 <h3>
@@ -55,7 +55,7 @@ function ViewMessage() {
             </IonItem>
 
             <div className="ion-padding">
-              <h1>{message.subject}</h1>
+              {/* <h1>{message.subject}</h1> */}
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

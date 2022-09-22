@@ -1,6 +1,5 @@
-import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { useState } from "react";
+import { Recipe } from "../data/recipe";
 import {
   IonContent,
   IonHeader,
@@ -10,18 +9,17 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
-} from '@ionic/react';
-import './Home.css';
+  useIonViewWillEnter,
+} from "@ionic/react";
+import "./Home.css";
 
 const Home: React.FC = () => {
+  const [messages, setMessages] = useState<Recipe[]>([]);
 
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
-  });
+  // useIonViewWillEnter(() => {
+  //   const msgs = getMessages();
+  //   setMessages(msgs);
+  // });
 
   const refresh = (e: CustomEvent) => {
     setTimeout(() => {
@@ -43,14 +41,12 @@ const Home: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
+            <IonTitle size="large">Inbox</IonTitle>
           </IonToolbar>
         </IonHeader>
 
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {/* {messages.map(m => <MessageListItem key={m.id} message={m} />)} */}
         </IonList>
       </IonContent>
     </IonPage>
