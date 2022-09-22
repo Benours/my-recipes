@@ -1,0 +1,8 @@
+{
+  "name": "MyRecipes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "71948554"
+}
