@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Message, getMessage } from '../data/messages';
+import { useState } from "react";
+import { Recipe } from "../data/recipe";
 import {
   IonBackButton,
   IonButtons,
@@ -12,19 +12,19 @@ import {
   IonPage,
   IonToolbar,
   useIonViewWillEnter,
-} from '@ionic/react';
-import { personCircle } from 'ionicons/icons';
-import { useParams } from 'react-router';
-import './ViewMessage.css';
+} from "@ionic/react";
+import { personCircle } from "ionicons/icons";
+import { useParams } from "react-router";
+import "./ViewMessage.css";
 
 function ViewMessage() {
-  const [message, setMessage] = useState<Message>();
+  const [message, setMessage] = useState<Recipe>();
   const params = useParams<{ id: string }>();
 
-  useIonViewWillEnter(() => {
-    const msg = getMessage(parseInt(params.id, 10));
-    setMessage(msg);
-  });
+  // useIonViewWillEnter(() => {
+  //   const msg = getMessage(parseInt(params.id, 10));
+  //   setMessage(msg);
+  // });
 
   return (
     <IonPage id="view-message-page">
@@ -68,7 +68,7 @@ function ViewMessage() {
             </div>
           </>
         ) : (
-          <div>Message not found</div>
+          <div>Recipe not found</div>
         )}
       </IonContent>
     </IonPage>
