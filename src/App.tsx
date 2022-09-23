@@ -1,5 +1,14 @@
 import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  setupIonicReact,
+} from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import ViewRecipe from "./pages/ViewRecipe";
@@ -22,23 +31,44 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import { add, home, list, menu, star } from "ionicons/icons";
+import List from "./pages/List";
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/" exact={true}>
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home" exact={true}>
-          <Home />
-        </Route>
-        {/* <Route path="/recipe/:id">
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route path="/" exact={true}>
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" exact={true}>
+            <Home />
+          </Route>
+          <Route path="/list" exact={true}>
+            <List />
+          </Route>
+          {/* <Route path="/recipe/:id">
            <ViewRecipe />
-        </Route> */}
-      </IonRouterOutlet>
+          </Route> */}
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="home" href="/home">
+            <IonIcon icon={home} />
+          </IonTabButton>
+          <IonTabButton tab="list" href="/list">
+            <IonIcon icon={list} />
+          </IonTabButton>
+          <IonTabButton>
+            <IonIcon icon={star} />
+          </IonTabButton>
+          <IonTabButton>
+            <IonIcon icon={add} />
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
     </IonReactRouter>
   </IonApp>
 );
