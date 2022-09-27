@@ -50,9 +50,9 @@ const App: React.FC = () => (
           <Route path="/list" exact={true}>
             <List />
           </Route>
-          {/* <Route path="/recipe/:id">
-           <ViewRecipe />
-          </Route> */}
+          <Route path="/recipe/:id">
+            <ViewRecipe />
+          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">

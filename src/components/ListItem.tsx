@@ -2,6 +2,7 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
+  IonImg,
   IonItem,
   IonText,
 } from "@ionic/react";
@@ -15,7 +16,7 @@ const ListItem: React.FC<ContainerProps> = (props) => {
     <IonItem class="item" color="dark">
       <IonCard class="card">
         <IonCardHeader class="card-header">
-          <IonText color="light">{props.title}</IonText>
+          <IonText color="light">Selection : {props.title}</IonText>
         </IonCardHeader>
         <IonCardContent class="card-content" color="dark">
           <IonText color="light">Plat A</IonText>
