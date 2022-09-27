@@ -9,14 +9,21 @@ class Favorite extends React.Component{
 
     getFavorite(){
         this.setState({}, ()=>{
-            fetch("http://localhost:3000/recipes").then(response=>response.json()).then(result => {this.setState({favorites: result})});
+            fetch("http://localhost:3000/favorites").then(response=>response.json()).then(result => {this.setState({favorites: result})});
         })
     }
 
-    cancelFavorite(id: any){
-        fetch("http://localhost:3000/recipes/"+ id,{method: 'DELETE'})
+    cancelFavorite(id: any,index: number){
+        
+        const {favorites} = this.state;
+                
+        favorites.splice(index,1);
+        const listFav = [...favorites];
+
+        this.setState({favorites: listFav})
+
+        fetch("http://localhost:3000/favorites/"+ id,{method: 'DELETE'})
         .then(res => res.json());
-        //todo update render
     }
 
     componentDidMount() {
@@ -31,7 +38,7 @@ class Favorite extends React.Component{
                             <IonTitle>FAVORITE</IonTitle>
                         </IonItem>
             
-            {favorites.map(favorite=>{
+            {favorites.map((favorite,index)=>{
                 const {
                     id,
                     namePlate,
@@ -47,7 +54,7 @@ class Favorite extends React.Component{
                                 <div>{ city }</div>
                                 <div>{ country }</div>
                             </IonCardContent>
-                            <IonButton onClick={()=>this.cancelFavorite(id)}>Retirer des favoris</IonButton>
+                            <IonButton onClick={()=>this.cancelFavorite(id,index)}>Retirer des favoris</IonButton>
                         </IonCard>   
                 );
             })
