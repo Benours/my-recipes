@@ -1,0 +1,41 @@
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  padding: 15px;
+  display: grid;
+  gap: 40px;
+  background-color: transparent;
+}
+
+.item {
+  border-radius: 10px;
+}
+
+.card {
+  background-color: transparent;
+  box-shadow: none;
+  width: 100%;
+}
+
+.card-header {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}

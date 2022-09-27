@@ -1,56 +1,42 @@
-import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
+import { useState } from "react";
+import { Recipe } from "../data/recipe";
 import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
   IonContent,
   IonHeader,
+  IonImg,
+  IonItem,
   IonList,
   IonPage,
   IonRefresher,
   IonRefresherContent,
+  IonText,
+  IonThumbnail,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
-} from '@ionic/react';
-import './Home.css';
+  useIonViewWillEnter,
+} from "@ionic/react";
+import "./Home.css";
+import ListItem from "../components/ListItem";
 
 const Home: React.FC = () => {
-
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
-  });
-
-  const refresh = (e: CustomEvent) => {
-    setTimeout(() => {
-      e.detail.complete();
-    }, 3000);
-  };
-
   return (
     <IonPage id="home-page">
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Inbox</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-        <IonRefresher slot="fixed" onIonRefresh={refresh}>
-          <IonRefresherContent></IonRefresherContent>
-        </IonRefresher>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+        <IonThumbnail class="container">
+          <IonImg
+            class="logo"
+            src="https://i.postimg.cc/hGKfyHJv/My-Recipes.png"
+          />
+        </IonThumbnail>
+        <IonList class="list">
+          <ListItem title="Grece" />
+          <ListItem title="Italy" />
+          <ListItem title="Japon" />
+          <ListItem title="États-unis" />
+          <ListItem title="France" />
         </IonList>
       </IonContent>
     </IonPage>
