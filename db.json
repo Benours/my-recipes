@@ -1,16 +1,81 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" },
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
   "recipes": [
     {
-      "id": 0,
-      "namePlate": "test",
+      "id": 1,
+      "namePlate": "test1",
       "city": "city",
       "country": "country",
-      "ingredients": ["ing", "red", "ient"],
+      "ingredients": [
+        "ing",
+        "red",
+        "ient"
+      ],
       "recipe": "bla bla bla",
-      "img": ["photo"]
+      "img": [
+        "photo"
+      ]
+    },
+    {
+      "id": 2,
+      "namePlate": "test2",
+      "city": "city",
+      "country": "country",
+      "ingredients": [
+        "ing",
+        "red",
+        "ient"
+      ],
+      "recipe": "bla bla bla",
+      "img": [
+        "photo"
+      ]
+    },
+    {
+      "id": 4,
+      "namePlate": "test4",
+      "city": "city",
+      "country": "country",
+      "ingredients": [
+        "ing",
+        "red",
+        "ient"
+      ],
+      "recipe": "bla bla bla",
+      "img": [
+        "photo"
+      ]
+    },
+    {
+      "id": 5,
+      "namePlate": "test5",
+      "city": "city",
+      "country": "country",
+      "ingredients": [
+        "ing",
+        "red",
+        "ient"
+      ],
+      "recipe": "bla bla bla",
+      "img": [
+        "photo"
+      ]
     }
   ]
 }
