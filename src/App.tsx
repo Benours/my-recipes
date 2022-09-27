@@ -22,6 +22,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Favorite from "./pages/Favorite";
 
 setupIonicReact();
 
@@ -34,6 +35,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/home" exact={true}>
           <Home />
+        </Route>
+        <Route path="/favorite" exact={true}>
+          <Favorite />
         </Route>
         {/* <Route path="/recipe/:id">
            <ViewRecipe />
