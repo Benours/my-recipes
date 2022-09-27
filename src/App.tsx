@@ -12,7 +12,7 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import ViewRecipe from "./pages/ViewRecipe";
-
+import AddRecipe from "./pages/AddRecipe";
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -53,6 +53,9 @@ const App: React.FC = () => (
           <Route path="/recipe/:id">
             <ViewRecipe />
           </Route>
+          <Route path="/new" exact={true}>
+            <AddRecipe />
+          </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
@@ -64,7 +67,7 @@ const App: React.FC = () => (
           <IonTabButton>
             <IonIcon icon={star} />
           </IonTabButton>
-          <IonTabButton>
+          <IonTabButton tab="new" href="/new">
             <IonIcon icon={add} />
           </IonTabButton>
         </IonTabBar>
