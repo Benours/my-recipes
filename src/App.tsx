@@ -33,6 +33,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import { add, home, list, menu, star } from "ionicons/icons";
 import List from "./pages/List";
+import Favorite from "./pages/Favorite";
 
 setupIonicReact();
 
@@ -53,6 +54,9 @@ const App: React.FC = () => (
           <Route path="/add" exact>
             <AddRecipe />
           </Route>
+          <Route path="/favorite" exact>
+            <Favorite />
+          </Route>
           <Route path="/recipe/:id">
             <ViewRecipe />
           </Route>
@@ -64,7 +68,7 @@ const App: React.FC = () => (
           <IonTabButton tab="list" href="/list">
             <IonIcon icon={list} />
           </IonTabButton>
-          <IonTabButton>
+          <IonTabButton tab="favorite" href="/favorite">
             <IonIcon icon={star} />
           </IonTabButton>
           <IonTabButton tab="add" href="/add">
