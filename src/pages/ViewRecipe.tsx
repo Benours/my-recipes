@@ -10,10 +10,11 @@ import {
   IonLabel,
   IonNote,
   IonPage,
+  IonText,
   IonToolbar,
   useIonViewWillEnter,
 } from "@ionic/react";
-import { personCircle } from "ionicons/icons";
+import { arrowDown, arrowForward, personCircle } from "ionicons/icons";
 import { useParams, useRouteMatch, withRouter } from "react-router";
 import "./ViewRecipe.css";
 
@@ -29,6 +30,8 @@ class ViewRecipe extends React.Component {
       recipe: "",
       img: [""],
     },
+    ing: false,
+    rec: false,
   };
 
   componentDidMount() {
@@ -55,7 +58,7 @@ class ViewRecipe extends React.Component {
   }
 
   render() {
-    const { items } = this.state;
+    const { items, ing, rec } = this.state;
     return (
       <IonPage id="view-message-page">
         <IonHeader translucent>
@@ -67,9 +70,39 @@ class ViewRecipe extends React.Component {
         </IonHeader>
 
         <IonContent fullscreen>
-          <IonLabel>
+          <IonLabel className="title">
             <h1>{items.namePlate}</h1>
           </IonLabel>
+          <IonLabel
+            className="subtitle"
+            onClick={() => this.setState({ ing: !ing })}
+          >
+            Ingredients :
+            {ing ? (
+              <IonIcon icon={arrowDown} />
+            ) : (
+              <IonIcon icon={arrowForward} />
+            )}
+          </IonLabel>
+          {ing ? (
+            items.ingredients.map((ingredient) => (
+              <IonText> - {ingredient}</IonText>
+            ))
+          ) : (
+            <></>
+          )}
+          <IonLabel
+            className="subtitle"
+            onClick={() => this.setState({ rec: !rec })}
+          >
+            Recette :
+            {rec ? (
+              <IonIcon icon={arrowDown} />
+            ) : (
+              <IonIcon icon={arrowForward} />
+            )}
+          </IonLabel>
+          {rec ? <IonText>{items.recipe}</IonText> : <></>}
         </IonContent>
       </IonPage>
     );

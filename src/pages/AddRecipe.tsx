@@ -22,7 +22,6 @@ class AddRecipe extends React.Component {
 
   addIngredient = () => {
     this.state.ingredients.push("");
-    console.log(this.state.ingredients);
     this.setState({ ingredients: [...this.state.ingredients] });
   };
 
@@ -47,7 +46,14 @@ class AddRecipe extends React.Component {
       img,
     };
 
-    console.log(newRecipe);
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newRecipe),
+    };
+    fetch("http://localhost:3000/recipes", requestOptions)
+      .then((response) => response.json())
+      .then((data) => this.setState({ postId: data.id }));
   };
 
   render() {
@@ -113,7 +119,9 @@ class AddRecipe extends React.Component {
               }
             ></IonTextarea>
           </div>
-          <IonButton onClick={() => this.validateForm()}>Valider</IonButton>
+          <IonButton href="/list" onClick={() => this.validateForm()}>
+            Valider
+          </IonButton>
         </IonContent>
       </IonPage>
     );

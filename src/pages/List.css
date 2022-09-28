@@ -1,0 +1,10 @@
+.conteneur-text {
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.text {
+  display: flex;
+  text-align: center;
+}

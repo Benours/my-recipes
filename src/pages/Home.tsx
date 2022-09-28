@@ -32,10 +32,9 @@ const Home: React.FC = () => {
           />
         </IonThumbnail>
         <IonList class="list">
-          <ListItem title="Grece" />
-          <ListItem title="Italy" />
+          <ListItem title="Italie" />
           <ListItem title="Japon" />
-          <ListItem title="États-unis" />
+          <ListItem title="Allemagne" />
           <ListItem title="France" />
         </IonList>
       </IonContent>

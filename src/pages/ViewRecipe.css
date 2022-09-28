@@ -1,40 +1,17 @@
-#view-message-page ion-item {
-  --inner-padding-end: 0;
-  --background: transparent;
-}
-
-#view-message-page ion-label {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-#view-message-page ion-item h2 {
-  font-weight: 600;
-}
-
-#view-message-page ion-item .date {
-  float: right;
-  align-items: center;
+.title {
   display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-#view-message-page ion-item ion-icon {
-  font-size: 42px;
-  margin-right: 8px;
+.subtitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: large;
 }
-
-#view-message-page ion-item ion-note {
-  font-size: 15px;
-  margin-right: 12px;
-  font-weight: normal;
-}
-
-#view-message-page h1 {
-  margin: 0;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-#view-message-page p {
-  line-height: 22px;
+ion-text {
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
 }

@@ -1,57 +1,68 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "recipes": [
     {
-      "id": 1,
-      "namePlate": "test1",
-      "city": "city",
-      "country": "country",
-      "ingredients": ["ing", "red", "ient"],
-      "recipe": "bla bla bla",
-      "img": ["photo"]
+      "namePlate": "Burger",
+      "city": "Hambourg",
+      "country": "Allemagne",
+      "ingredients": [
+        "Pain",
+        "Steack",
+        "Tomate",
+        "Salade",
+        "Mayonnaise"
+      ],
+      "recipe": "Empiler les ingrédient les un au dessus des autres dans le pain.",
+      "img": [
+        ""
+      ],
+      "id": 1
     },
     {
-      "id": 2,
-      "namePlate": "test2",
-      "city": "city",
-      "country": "country",
-      "ingredients": ["ing", "red", "ient"],
-      "recipe": "bla bla bla",
-      "img": ["photo"]
+      "namePlate": "Takoyaki",
+      "city": "Osaka",
+      "country": "Japon",
+      "ingredients": [
+        "Pate à beignet",
+        "Poulpe",
+        "Metal"
+      ],
+      "recipe": "Mettre le poulpe dans la pate.\nFaire cuire.\nMettre \"Takoyaki - Ultra Vomit\".\nKiffer.",
+      "img": [
+        ""
+      ],
+      "id": 2
     },
     {
-      "id": 4,
-      "namePlate": "test4",
-      "city": "city",
-      "country": "country",
-      "ingredients": ["ing", "red", "ient"],
-      "recipe": "bla bla bla",
-      "img": ["photo"]
-    },
+      "namePlate": "Pizza",
+      "city": "Napoli",
+      "country": "Italie",
+      "ingredients": [
+        "La mama"
+      ],
+      "recipe": "Demander à la mama.",
+      "img": [
+        ""
+      ],
+      "id": 3
+    }
+  ],
+  "favorites": [
     {
-      "id": 5,
-      "namePlate": "test5",
-      "city": "city",
-      "country": "country",
-      "ingredients": ["ing", "red", "ient"],
-      "recipe": "bla bla bla",
-      "img": ["photo"]
+      "namePlate": "Burger",
+      "city": "Hambourg",
+      "country": "Allemagne",
+      "ingredients": [
+        "Pain",
+        "Steack",
+        "Tomate",
+        "Salade",
+        "Mayonnaise"
+      ],
+      "recipe": "Empiler les ingrédient les un au dessus des autres dans le pain.",
+      "img": [
+        ""
+      ],
+      "id": 1
     }
   ]
 }
