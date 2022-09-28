@@ -13,7 +13,7 @@ interface ContainerProps {
 
 const ListItem: React.FC<ContainerProps> = (props) => {
   return (
-    <IonItem class="item" color="dark">
+    <IonItem class="item" color="dark" key={props.title}>
       <IonCard class="card">
         <IonCardHeader class="card-header">
           <IonText color="light">Selection : {props.title}</IonText>
