@@ -5,19 +5,10 @@ import {
   IonTextarea,
   IonContent,
   IonPage,
-  IonHeader,
   IonItem,
   IonIcon,
 } from "@ionic/react";
-import {
-  add,
-  addCircleOutline,
-  addOutline,
-  addSharp,
-  removeCircleOutline,
-  removeOutline,
-  removeSharp,
-} from "ionicons/icons";
+import { addSharp, removeSharp } from "ionicons/icons";
 import React from "react";
 import "./AddRecipe.css";
 

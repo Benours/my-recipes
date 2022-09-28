@@ -5,9 +5,7 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonContent,
-  IonItem,
   IonPage,
-  IonTitle,
 } from "@ionic/react";
 import React from "react";
 

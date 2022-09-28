@@ -1,22 +1,9 @@
-import { useState } from "react";
-import { Recipe } from "../data/recipe";
 import {
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
   IonContent,
-  IonHeader,
   IonImg,
-  IonItem,
   IonList,
   IonPage,
-  IonRefresher,
-  IonRefresherContent,
-  IonText,
   IonThumbnail,
-  IonTitle,
-  IonToolbar,
-  useIonViewWillEnter,
 } from "@ionic/react";
 import "./Home.css";
 import ListItem from "../components/ListItem";

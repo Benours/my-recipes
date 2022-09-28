@@ -1,21 +1,16 @@
-import React, { Component } from "react";
-import { Recipe } from "../data/recipe";
+import React from "react";
 import {
   IonBackButton,
   IonButtons,
   IonContent,
   IonHeader,
   IonIcon,
-  IonItem,
   IonLabel,
-  IonNote,
   IonPage,
   IonText,
   IonToolbar,
-  useIonViewWillEnter,
 } from "@ionic/react";
-import { arrowDown, arrowForward, personCircle } from "ionicons/icons";
-import { useParams, useRouteMatch, withRouter } from "react-router";
+import { arrowDown, arrowForward } from "ionicons/icons";
 import "./ViewRecipe.css";
 
 class ViewRecipe extends React.Component {

@@ -2,7 +2,6 @@ import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
   IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -31,7 +30,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import { add, home, list, menu, star } from "ionicons/icons";
+import { add, home, list, star } from "ionicons/icons";
 import List from "./pages/List";
 import Favorite from "./pages/Favorite";
 

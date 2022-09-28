@@ -3,12 +3,10 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonImg,
   IonItem,
   IonText,
 } from "@ionic/react";
 import { useEffect, useState } from "react";
-import { Recipe } from "../data/recipe";
 
 interface ContainerProps {
   title: string;
@@ -42,7 +40,8 @@ const ListItem: React.FC<ContainerProps> = (props) => {
           <IonText color="light">Selection : {props.title}</IonText>
         </IonCardHeader>
         <IonCardContent class="card-content" color="dark">
-          {tab.map((recipe, index) => {
+          {/* eslint-disable-next-line array-callback-return */}
+          {tab.map((recipe) => {
             if (recipe.country === props.title)
               return (
                 <IonButton routerLink={`/recipe/${recipe.id}`}>

@@ -9,9 +9,8 @@ import {
   IonList,
   IonPage,
 } from "@ionic/react";
-import { KeysResult, Preferences } from "@capacitor/preferences";
 import { close, star, starOutline } from "ionicons/icons";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Recipe } from "../data/recipe";
 import "./List.css";
 
@@ -61,7 +60,7 @@ class List extends React.Component {
   };
 
   setListePLat = async () => {
-    const list = fetch(`http://localhost:3000/recipes`)
+    fetch(`http://localhost:3000/recipes`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -172,7 +171,7 @@ class List extends React.Component {
   };
 
   render() {
-    const { listPlat, text, fav } = this.state;
+    const { listPlat, text } = this.state;
 
     return (
       <IonPage>
@@ -191,6 +190,7 @@ class List extends React.Component {
               ></IonInput>
             </IonItem>
             {listPlat!.length > 0 ? (
+              // eslint-disable-next-line array-callback-return
               listPlat!.map((plat, index) => {
                 if (
                   plat.namePlate.includes(text!) ||
