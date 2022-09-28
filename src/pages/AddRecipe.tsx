@@ -1,3 +1,4 @@
+import { Camera, CameraResultType, CameraSource } from "@capacitor/camera";
 import {
   IonLabel,
   IonInput,
@@ -5,7 +6,9 @@ import {
   IonTextarea,
   IonContent,
   IonPage,
+  IonIcon,
 } from "@ionic/react";
+import { cameraOutline } from "ionicons/icons";
 import React from "react";
 import "./AddRecipe.css";
 
@@ -50,11 +53,27 @@ class AddRecipe extends React.Component {
     console.log(newRecipe);
   };
 
+  takePicture = async() => {
+    const {img} = this.state;
+
+    const photo = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality:100
+    })
+  }
+
   render() {
     const { ingredients } = this.state;
     return (
       <IonPage>
         <IonContent>
+          <div className="daPhoto">
+            
+          </div>
+          <IonButton onClick={ this.takePicture }>
+            <IonIcon icon={cameraOutline}/>
+          </IonButton>
           <div className="whatPlateBruh">
             <IonLabel>Nom du plat</IonLabel>
             <IonInput
