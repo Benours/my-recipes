@@ -5,7 +5,19 @@ import {
   IonTextarea,
   IonContent,
   IonPage,
+  IonHeader,
+  IonItem,
+  IonIcon,
 } from "@ionic/react";
+import {
+  add,
+  addCircleOutline,
+  addOutline,
+  addSharp,
+  removeCircleOutline,
+  removeOutline,
+  removeSharp,
+} from "ionicons/icons";
 import React from "react";
 import "./AddRecipe.css";
 
@@ -61,64 +73,71 @@ class AddRecipe extends React.Component {
     return (
       <IonPage>
         <IonContent>
-          <div className="whatPlateBruh">
-            <IonLabel>Nom du plat</IonLabel>
+          <IonLabel className="recipe-title">Nouvelle recette</IonLabel>
+          <IonItem className="recipe-item">
+            <IonLabel position="floating">Nom du plat</IonLabel>
             <IonInput
+              className="recipe-input"
               onIonChange={(event) =>
                 this.setState({ namePlate: event.detail.value! })
               }
             />
-          </div>
-          <div className="daOrigin">
-            <IonLabel>Ville</IonLabel>
+          </IonItem>
+          <IonItem className="recipe-item">
+            <IonLabel position="floating">Ville</IonLabel>
             <IonInput
+              className="recipe-input"
               onIonChange={(event) =>
                 this.setState({ city: event.detail.value! })
               }
             />
-            <IonLabel>Pays</IonLabel>
+          </IonItem>
+          <IonItem className="recipe-item">
+            <IonLabel position="floating">Pays</IonLabel>
             <IonInput
+              className="recipe-input"
               onIonChange={(event) =>
                 this.setState({ country: event.detail.value! })
               }
             />
-          </div>
-          <div className="disCompo">
-            {ingredients.map((_e, index) => (
-              <div key={index}>
-                <IonLabel>Ingrédients</IonLabel>
-                <IonInput
-                  onIonChange={(event) => {
-                    let ingredients = [...this.state.ingredients];
-                    ingredients[index] = event.detail.value!;
-                    this.setState({ ingredients });
-                  }}
-                  value={_e}
-                />
+          </IonItem>
+
+          {ingredients.map((_e, index) => (
+            <IonItem className="recipe-item" key={index}>
+              <IonLabel position="floating">Ingrédient {index + 1}</IonLabel>
+              <IonInput
+                className="recipe-input"
+                onIonChange={(event) => {
+                  let ingredients = [...this.state.ingredients];
+                  ingredients[index] = event.detail.value!;
+                  this.setState({ ingredients });
+                }}
+                value={_e}
+              />
+              <IonItem className="recipe-btn">
                 {ingredients.length - 1 === index && (
                   <IonButton onClick={this.addIngredient}>
-                    Ajouter un ingrédient
+                    <IonIcon icon={addSharp} />
                   </IonButton>
                 )}
-                <div>
-                  {ingredients.length > 1 && (
-                    <IonButton onClick={() => this.delIngredient(index)}>
-                      Supprimer ingrédient
-                    </IonButton>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="someText">
-            <IonLabel>Etapes de la recette</IonLabel>
-            <IonTextarea
-              autoGrow
-              onIonChange={(event) =>
-                this.setState({ recipe: event.detail.value! })
-              }
-            ></IonTextarea>
-          </div>
+                {ingredients.length > 1 && (
+                  <IonButton onClick={() => this.delIngredient(index)}>
+                    <IonIcon icon={removeSharp} />
+                  </IonButton>
+                )}
+              </IonItem>
+            </IonItem>
+          ))}
+          <IonLabel className="recipe-label-area">
+            Etapes de la recette
+          </IonLabel>
+          <IonTextarea
+            className="recipe-text-area"
+            autoGrow
+            onIonChange={(event) =>
+              this.setState({ recipe: event.detail.value! })
+            }
+          ></IonTextarea>
           <IonButton href="/list" onClick={() => this.validateForm()}>
             Valider
           </IonButton>
